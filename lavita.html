@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라비타 맞춤정장</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+        .image-gallery img {
+            width: 100%;
+            max-width: 999.5px;
+            margin: 0 auto;
+            display: block;
+        }
+        .form-container {
+            padding: 1rem;
+        }
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body>
+    <main class="container mx-auto my-4">
+        <div class="image-gallery">
+            <img src="./images/1.jpg" alt="Image 1">
+            <img src="./images/2.jpg" alt="Image 2">
+            <img src="./images/3.jpg" alt="Image 3">
+            <img src="./images/4.jpg" alt="Image 4">
+            <img src="./images/5.jpg" alt="Image 5">
+        </div>
+
+        <div class="form-container bg-white rounded-lg shadow p-4 mt-6">
+            <h2 class="text-xl font-bold text-center">라비타 맞춤정장 상담 신청</h2>
+            <form onsubmit="submitForm(event)">
+                <div>
+                    <label for="name">이름 *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="phone">연락처 *</label>
+                    <div class="flex space-x-2">
+                        <select id="phone_prefix" name="phone_prefix" required>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                        </select>
+                        <input type="text" id="phone_middle" name="phone_middle" maxlength="4" required>
+                        <input type="text" id="phone_last" name="phone_last" maxlength="4" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message">상담 내용</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox" name="agreement" required>
+                        개인정보 수집 및 이용에 동의합니다.
+                    </label>
+                </div>
+
+                <button type="submit">상담 신청하기</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center p-4 mt-6">
+        <p>© 2025 라비타 맞춤정장. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = `${document.getElementById('phone_prefix').value}-${document.getElementById('phone_middle').value}-${document.getElementById('phone_last').value}`;
+            const message = document.getElementById('message').value;
+
+            const smsNumber = "01023576771";
+            const smsBody = `이름: ${name}%0A연락처: ${phone}%0A상담 내용: ${message}`;
+
+            window.location.href = `sms:${smsNumber}?body=${encodeURIComponent(smsBody)}`;
+        }
+    </script>
+</body>
+</html>
