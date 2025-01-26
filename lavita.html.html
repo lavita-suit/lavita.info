@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="라비타 맞춤정장에서 맞춤정장 상담을 신청하세요.">
+    <meta name="keywords" content="맞춤정장, 상담 신청, 라비타">
+    <meta property="og:title" content="라비타 맞춤정장 상담 신청">
+    <meta property="og:description" content="고객님의 맞춤정장 상담 신청을 환영합니다.">
+    <meta property="og:image" content="/images/share-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <title>라비타 맞춤정장</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+
+        .image-gallery img {
+            width: 640px;
+            height: auto;
+        }
+
+        .form-container {
+            width: 640px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <main class="container mx-auto my-4">
+        <div class="image-gallery flex flex-col items-center gap-4">
+            <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/475051112_1180889484039479_7173718917882240821_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CFmF7UQhszoQ7kNvgHnt9Vo&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=ACqnNszBA1r1oNlpb5bAvSt&oh=00_AYBt6B-sas6RQP0ogkt2xdxDQOvTDrPaJQsjL1-7SNlL5g&oe=679BC3D2" alt="Image 1" class="rounded shadow">
+            <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/475306796_1180891177372643_2492560955737952668_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_MwCPwdbZ0gQ7kNvgF-u00E&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=APucO1cKL5lsQMQ9qW7CdKE&oh=00_AYAqAYUX0CFEFSbr2uT2blKZQ5sIWh-O3gVpbdoDAt7T9Q&oe=679BB473" alt="Image 2" class="rounded shadow">
+            <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/475080757_1180891964039231_7106478019183646000_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xKaMVWyq4B8Q7kNvgG5_sud&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=AW-xCkcC9WPBW3Mv-E0DSr5&oh=00_AYCq44JJv3waz4NuSiZRDO3eLRu2mVgJvkfzQKMbG4YnQg&oe=679BB36B" alt="Image 3" class="rounded shadow">
+            <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/475064050_1180892300705864_1116759230433196941_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9VXzdTUdVvIQ7kNvgG70X5e&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=AkEkUBIJwcEZSSRglTmyq6R&oh=00_AYDhASc_0Y-9T4AZUs1m9H4WvcnbVMMOTgtll4gZdLb7YA&oe=679BCC77" alt="Image 4" class="rounded shadow">
+            <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/474884977_1180892640705830_6386405863155102438_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xP7VLnaYboYQ7kNvgHahf1E&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=AlFidUgxIPAWFrmswEf9Oo7&oh=00_AYALK6womIDlYN0LKSgwbsSlCxaHChVvvuKSN1nX5K1HoQ&oe=679BC9EE" alt="Image 5" class="rounded shadow">
+        </div>
+
+        <div class="form-container bg-white rounded-lg shadow p-6 mt-6">
+            <h2 class="text-xl font-bold text-center">라비타 맞춤정장 상담 신청</h2>
+            <form action="/submit" method="POST">
+                <div>
+                    <label for="name" class="block text-sm font-medium">이름 *</label>
+                    <input type="text" id="name" name="name" class="block w-full mt-1 p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mt-4">
+                    <label for="phone" class="block text-sm font-medium">연락처 *</label>
+                    <div class="flex space-x-2">
+                        <select id="phone_prefix" name="phone_prefix" class="border border-gray-300 rounded p-2" required>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                        </select>
+                        <input type="text" id="phone_middle" name="phone_middle" maxlength="4" class="flex-1 border border-gray-300 rounded p-2" required>
+                        <input type="text" id="phone_last" name="phone_last" maxlength="4" class="flex-1 border border-gray-300 rounded p-2" required>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <label for="message" class="block text-sm font-medium">상담 내용</label>
+                    <textarea id="message" name="message" rows="4" class="block w-full mt-1 p-2 border border-gray-300 rounded"></textarea>
+                </div>
+
+                <div class="mt-4">
+                    <label class="block text-sm font-medium">
+                        <input type="checkbox" name="agreement" required>
+                        개인정보 수집 및 이용에 동의합니다. <a href="/privacy-policy" class="text-blue-500 underline">자세히 보기</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full mt-6 p-3 bg-blue-600 text-white rounded hover:bg-blue-700">상담 신청하기</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center p-4 mt-6 bg-gray-200">
+        <p>© 2025 라비타 맞춤정장. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
